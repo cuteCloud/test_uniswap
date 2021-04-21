@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { AppState } from '../index'
 import sortByListPriority from 'utils/listSort'
 import UNSUPPORTED_TOKEN_LIST from '../../constants/tokenLists/uniswap-v2-unsupported.tokenlist.json'
-
+console.log('DEFAULT_TOKEN_LIST', DEFAULT_TOKEN_LIST, ChainId)
 type TagDetails = Tags[keyof Tags]
 export interface TagInfo extends TagDetails {
   id: string
@@ -41,7 +41,8 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
-  [ChainId.MAINNET]: {}
+  [ChainId.MAINNET]: {},
+  [ChainId.HECO]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -96,7 +97,8 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     3: { ...map1[3], ...map2[3] },
     4: { ...map1[4], ...map2[4] },
     5: { ...map1[5], ...map2[5] },
-    42: { ...map1[42], ...map2[42] }
+    42: { ...map1[42], ...map2[42] },
+    128: { ...map1[128], ...map2[128] }
   }
 }
 

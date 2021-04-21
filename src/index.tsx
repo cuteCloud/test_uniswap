@@ -19,7 +19,7 @@ import TransactionUpdater from './state/transactions/updater'
 import UserUpdater from './state/user/updater'
 import ThemeProvider, { FixedGlobalStyle, ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
-
+console.log('dsdwqdwq', NetworkContextName, window.ethereum)
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 if (!!window.ethereum) {
